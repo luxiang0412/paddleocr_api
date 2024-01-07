@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  paddleocr_api:
+    image: paddleocr_api:latest
+    container_name: paddleocr_api
+    restart: always
+    ports:
+      - "8866:8866"
+    volumes:
+      - .paddleocr:/root/.paddleocr
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      paddleocr_api:
+        ipv4_address: 172.18.1.2
+networks:
+  paddleocr_api:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.1.0/24
