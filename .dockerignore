@@ -2,3 +2,6 @@
 .venv
 .idea
 .paddleocr
+Dockerfile
+docker-compose.yml
+.dockerignore
